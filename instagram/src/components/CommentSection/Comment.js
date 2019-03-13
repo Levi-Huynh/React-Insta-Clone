@@ -3,11 +3,11 @@ import React from "react";
 const Comment= props => {
 
     return (
-<div>
+<div className="commentContainer">
 
 
-<p>{props.comment.username}</p> 
-<p>{props.comment.text}</p>
+<p className="usernameComm">{props.comment.username}</p> 
+<p className="textComm">{props.comment.text}</p>
 
 
 

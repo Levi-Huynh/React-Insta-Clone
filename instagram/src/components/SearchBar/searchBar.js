@@ -3,12 +3,19 @@ import React from 'react';
 const SearchBar = props =>{
 
     return (
-        <div>
-            <input placeholder='Search'/>
+        <div className="SearchBar">
+            <div className="logo">
+           <img className="logoImg" src="https://rayabel.com/images/staticimages/instagram-header.png" alt="logo"></img>
+           </div>
+          <input className="SearchInput" placeholder="Search"/>
 
-    
-          <i class="far fa-compass"></i>
-        </div>
+          <div className="icons">
+          <i className="far fa-compass"></i>
+          <i className="far fa-heart"></i>
+          <i className="far fa-user"></i>
+          </div>
+        
+         </div>
     )
 }
 

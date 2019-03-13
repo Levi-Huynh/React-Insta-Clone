@@ -1,0 +1,43 @@
+.SearchBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 1px solid blue;
+    height: 80px;
+    }
+    
+    .logo{
+      margin-top: 19px;
+      width: 20%;
+      height: 40px;
+      border: 1px solid blue;
+    }
+    
+    .logo .logoImg{
+      max-width: 100%;
+      height: auto;
+    }
+    
+    .SearchInput{
+      margin-top: 30px;
+      height: 25px;
+      width: 22%;
+    }
+    
+    .icons{
+      width: 17%;
+      height: 130px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      margin-top: 30px;
+      
+    }
+    
+    .far{
+      border: 1px solid purple;
+      width: 30%;
+      height: 25px;
+      text-align: center;
+    }
+  

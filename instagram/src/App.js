@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import '../src/components/SearchBar/SearchBar.css';
+import '../src/components/PostContainer/PostContainer.css';
+import '../src/components/CommentSection/CommentSection.css';
 import dummyData from './dummy-data';
 import PostContainer from './components/PostContainer/PostContainer';
 import CommentSection from './components/CommentSection/CommentSection';
