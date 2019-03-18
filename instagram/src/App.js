@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import  dummyData from './dummy-data';
-import PostContainer from './Components/PostContainer/PostContainer';
-import './Components/PostContainer/PostContainer.css';
+import PostContainer from './components/PostContainer/PostContainer';
+
 
 class App extends React.Component {
   constructor() {
@@ -11,7 +11,7 @@ class App extends React.Component {
     this.state ={
        post: [],
        search: '',
-       filteredPosts:  []
+       filteredPosts: []
        
     }
     console.log("In the constructor");

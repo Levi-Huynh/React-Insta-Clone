@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import CommentSection from '../CommentSection/CommentSection';
-import InstaPostAtt from './InstaPost';
+import InstaPostAtt from '../PostContainer/InstaPostAtt';
 // import SearchBar from '../SearchBar/SearchBar';
 
 class PostContainer extends React.Component {
