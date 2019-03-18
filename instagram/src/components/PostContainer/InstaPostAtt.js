@@ -1,4 +1,5 @@
 import React from "react";
+import CommentSection from "../CommentSection/CommentSection";
 
 const InstaPostAtt = props => {
 
@@ -14,10 +15,11 @@ const InstaPostAtt = props => {
 <img className="instaImage1" src={props.attribute.imageUrl} alt={props.attribute.username}></img>
 </div>
 <div className="likeIcons">
-<i className="far fa-heart"></i>
+<i className="far fa-heart" onClick={props.incrementScore}></i>
 <i className="far fa-comment"></i>    
 </div>
-<p className="likesP">{props.attribute.likes} likes</p>
+<p className="likesP">{props.likes} likes</p>
+
 
         </div>
 

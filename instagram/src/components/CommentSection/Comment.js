@@ -1,20 +1,14 @@
-import React from "react";
+import React, {Component} from 'react';
 
-const Comment= props => {
+const Comment = props => {
 
     return (
-<div className="commentContainer">
-
-
-<p className="usernameComm">{props.comment.username}</p> 
-<p className="textComm">{props.comment.text}</p>
-
-
-
-</div>
+        <div>
+            <p>{props.comment.username}</p>
+            <p>{props.comment.text}</p>
+            </div>
 
     )
-
 
 }
 
