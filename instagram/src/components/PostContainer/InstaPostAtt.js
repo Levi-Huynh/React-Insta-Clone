@@ -1,6 +1,15 @@
 import React from "react";
 import CommentSection from "../CommentSection/CommentSection";
 
+// incrementScore= () => {
+//     this.setState(prevState => {
+//         return {
+//             likes: prevState.likes + 1
+//         }
+//     })
+// }
+
+
 const InstaPostAtt = props => {
 
     return (
@@ -15,7 +24,7 @@ const InstaPostAtt = props => {
 <img className="instaImage1" src={props.attribute.imageUrl} alt={props.attribute.username}></img>
 </div>
 <div className="likeIcons">
-<i className="far fa-heart" onClick={props.incrementScore}></i>
+<i className="far fa-heart" onClick={props.incrementLikes}></i>
 <i className="far fa-comment"></i>    
 </div>
 <p className="likesP">{props.likes} likes</p>

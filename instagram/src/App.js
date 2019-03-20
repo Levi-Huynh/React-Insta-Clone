@@ -11,7 +11,8 @@ class App extends React.Component {
     this.state ={
        post: [],
        search: '',
-       filteredPosts: []
+       filteredPosts: [],
+       likes: 0
        
     }
     console.log("In the constructor");
@@ -26,31 +27,41 @@ class App extends React.Component {
   }
 
   updateSearch(event) {
+    event.preventDefault();
     this.setState({search: event.target.value.substr(0,20)});
   }
+
+incrementLikes= () => {
+    this.setState(prevState => {
+        return {
+            likes: prevState.likes + 1
+        }
+    })
+}
+
 
   filterSearch =(e) => {
    
     e.preventDefault();
     let filteredPosts = this.state.post.filter(
       (post) => {
-          return post.username.indexOf(this.state.search) !== -1;
+          return post.username.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
   })
-this.setState({
-  post: filteredPosts,
-  search: ''
-});
-}
-
+  this.setState({
+    filteredPosts,
+    search: '',
+  
+  });
+  }
   
 
   render() {
-    console.log("In render");
+
     return (
       
-     
+   
       <div className="App">
-       <form>
+       <form onSubmit={this.filterSearch.bind(this)}>
           <input 
           className="SearchInput" 
           placeholder="Search..."
@@ -62,12 +73,13 @@ this.setState({
 
         <button onClick={this.filterSearch.bind(this)}>Search Posts</button>
 
-
-          {this.state.post.length > 0 ? (
-          <PostContainer post={this.state.post} />
+        {this.state.filteredPosts.length > 0 ? (
+         <PostContainer post={this.state.filteredPosts} likes={this.state.likes} incrementLikes={this.incrementLikes}/>
         ) : (
-          <h2>Loading...</h2>
+          <PostContainer post={this.state.post} likes={this.state.likes} incrementLikes={this.incrementLikes}/>
         )}
+
+
       </div>
     );
  
@@ -76,3 +88,9 @@ this.setState({
 }
 
 export default App;
+
+// {this.state.post.length > 0 ? (
+//   <PostContainer post={this.state.post} />
+// ) : (
+//   <h2>Loading...</h2>
+// )}
