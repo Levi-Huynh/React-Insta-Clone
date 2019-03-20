@@ -3,12 +3,22 @@
 .commentContainer{
     display: flex;
     flex-direction: row;
-    margin-left: 2.5%;
+    /* margin-left: 2.5%; */
     font-size: 1.35rem;
     font-weight: 600;
     margin-top: 4px;
+    max-width: 900px;
+    width: 100%;
 }
 
+.CommentComp{
+  
+}
+
+.topCommentSect{
+    /* border: 1px solid green; */
+    width: 100%;
+}
 .usernameComm{
     font-weight: 650;
     margin-right: 1%;

@@ -8,7 +8,8 @@ class CommentSection extends React.Component {
         super(props)
         this.state ={
         comments: props.comment,
-        text: ''
+        text: '',
+        timeS: props.time
         }
     }
 
@@ -38,14 +39,15 @@ class CommentSection extends React.Component {
 render() {
 return (
    
-<div>
-
+<div className="commentContainer">
+<div className="topCommentSect">
         {this.state.comments.map((c,i) => 
      <Comment key={i} comment={c}/>)}
- 
+     <p className="timestamp">{this.state.timeS}</p>
+    
   <form onSubmit ={this.submitItem} add={this.addNewComment}>
             <input 
-
+            className="inputComm"
             type="text"
             value={this.state.text}
             name="text"
@@ -54,6 +56,7 @@ return (
             />
 
   </form>
+  </div>
     </div>
 
 )

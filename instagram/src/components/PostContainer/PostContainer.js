@@ -9,13 +9,15 @@ const PostContainer = props => {
     return (
 <div>
 
+
    
  {props.post.map((insta) => {  
         return (
         <div>
    
-         <InstaPostAtt attribute={insta}  likes={props.likes} incrementLikes={props.incrementLikes}/>
-         <CommentSection comment={insta.comments}/>
+   <InstaPostAtt attribute={insta}/>
+        
+         <CommentSection comment={insta.comments} time={insta.timestamp}/>
           </div>)
          
         })}

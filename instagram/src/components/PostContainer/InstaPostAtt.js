@@ -1,16 +1,12 @@
-import React from "react";
-import CommentSection from "../CommentSection/CommentSection";
+import React, { Component } from 'react';
 
-// incrementScore= () => {
-//     this.setState(prevState => {
-//         return {
-//             likes: prevState.likes + 1
-//         }
-//     })
-// }
+import CommentSection from "../CommentSection/CommentSection";
+import InstaLikes from './InstaPostChild';
+
 
 
 const InstaPostAtt = props => {
+    console.log(props.attribute);
 
     return (
 <div className="InstaPostAtt">
@@ -23,17 +19,19 @@ const InstaPostAtt = props => {
 <div className="instaImage">
 <img className="instaImage1" src={props.attribute.imageUrl} alt={props.attribute.username}></img>
 </div>
-<div className="likeIcons">
-<i className="far fa-heart" onClick={props.incrementLikes}></i>
-<i className="far fa-comment"></i>    
+
+<div>
+<InstaLikes icons={props.attribute}/>
+     
 </div>
-<p className="likesP">{props.likes} likes</p>
 
 
-        </div>
+
+</div>
 
     )
 
 }
 
 export default InstaPostAtt;
+
