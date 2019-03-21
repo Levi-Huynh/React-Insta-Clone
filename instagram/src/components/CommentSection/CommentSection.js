@@ -20,8 +20,9 @@ class CommentSection extends React.Component {
 
  addNewComment = (event, item) => {
      event.preventDefault();
+     let username1 = localStorage.getItem('username');
     const newComment = {
-        username: "jack10",
+        username: `${username1}`,
         text: item
     };
     this.setState({
