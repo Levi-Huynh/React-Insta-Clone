@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import  dummyData from './dummy-data';
-import PostContainer from './components/PostContainer/PostContainer';
-import '../src/components/CommentSection/CommentSection.css';
-import '../src/components/PostContainer/PostContainer.css';
-import '../src/components/SearchBar/SearchBar.css';
+// import  dummyData from './dummy-data';
+// import PostContainer from './components/PostContainer/PostContainer';
+import PostsPage from './components/PostContainer/PostsPage';
+// import '../src/components/CommentSection/CommentSection.css';
+// import '../src/components/PostContainer/PostContainer.css';
+// import '../src/components/SearchBar/SearchBar.css';
+// import './components/Authentication/withAuthenticate';
+import withAuthenticate from './components/Authentication/withAuthenticate';
+
+const ComponentFromWithAuthenticate = withAuthenticate (PostsPage);
+
 
 class App extends React.Component {
   constructor() {
@@ -21,33 +27,35 @@ class App extends React.Component {
   }
 
 
-  componentDidMount() {
-    console.log("In CDM");
-    this.setState ({post: dummyData});
+//   componentDidMount() {
+//     console.log("In CDM");
+//     this.setState ({post: dummyData});
    
     
-  }
+//   }
 
-  updateSearch(event) {
-    event.preventDefault();
-    this.setState({search: event.target.value.substr(0,20)});
-  }
+//   updateSearch(event) {
+//     event.preventDefault();
+//     this.setState({search: event.target.value.substr(0,20)});
+//   }
+// componentDidUpdate(){
+//   console.log(this.state.post);
+// }
 
 
-
-  filterSearch =(e) => {
+//   filterSearch =(e) => {
    
-    e.preventDefault();
-    let filteredPosts = this.state.post.filter(
-      (post) => {
-          return post.username.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
-  })
-  this.setState({
-    filteredPosts,
-    search: '',
+//     e.preventDefault();
+//     let filteredPosts = this.state.post.filter(
+//       (post) => {
+//           return post.username.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
+//   })
+//   this.setState({
+//     filteredPosts,
+//     search: '',
   
-  });
-  }
+//   });
+//   }
   
 
   render() {
@@ -56,35 +64,9 @@ class App extends React.Component {
       
    
       <div className="App">
-        <div className="SearchBar">
-            <div className="logo">
-           <img className="logoImg" src="https://rayabel.com/images/staticimages/instagram-header.png" alt="logo"></img>
-           </div>
-       <form className="form" onSubmit={this.filterSearch.bind(this)}>
-          <input 
-          className="SearchInput" 
-          placeholder="Search"
-          type="text"
-          value={this.state.search}
-          onChange={this.updateSearch.bind(this)}
-          />
-        </form>
-        <div className="icons">
-          <i className="far fa-compass"></i>
-          <i className="far fa-heart"></i>
-          <i className="far fa-user"></i>
-          </div>
+     <ComponentFromWithAuthenticate/>
 
-        {/* <button onClick={this.filterSearch.bind(this)}>Search Posts</button> */}
-        </div>
-
-        {this.state.filteredPosts.length > 0 ? (
-         <PostContainer post={this.state.filteredPosts} likes={this.state.likes} incrementLikes={this.incrementLikes}/>
-        ) : (
-          <PostContainer post={this.state.post} likes={this.state.likes} incrementLikes={this.incrementLikes}/>
-        )}
-
-
+     />
       </div>
     );
  
@@ -99,3 +81,7 @@ export default App;
 // ) : (
 //   <h2>Loading...</h2>
 // )}
+
+{/* <PostsPage post={this.state.post} filtered={this.state.filteredPosts} search={this.state.search} 
+updateSearch={this.updateSearch.bind(this)} filterSearch={this.filterSearch.bind(this)}
+/> */}
