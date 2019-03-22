@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import PropTypes from 'prop-types';
 import Comment from './Comment';
 
 
@@ -13,9 +13,14 @@ class CommentSection extends React.Component {
         }
     }
 
+   
+
     handleChanges = e => {
         this.setState ({[e.target.name]: e.target.value,
+         
                             }); 
+                          
+                            
     }
 
  addNewComment = (event, item) => {
@@ -25,16 +30,64 @@ class CommentSection extends React.Component {
         username: `${username1}`,
         text: item
     };
+
+   
     this.setState({
         comments: [...this.state.comments, newComment]
     })
+    localStorage.setItem("comments", JSON.stringify(newComment));
 };
+
+// updateInput(key, value) {
+//     // update react state
+//     this.setState({ [key]: value });
+  
+  
+//   }
+
+  // componentWillUnmount() {
+  //   window.removeEventListener(
+  //     "beforeunload",
+  //     this.saveStateToLocalStorage.bind(this)
+  //   );
+
+  //   // saves if component has a chance to unmount
+  //   this.saveStateToLocalStorage();
+  // }
+
+  // hydrateStateWithLocalStorage() {
+  //   // for all items in state
+  //   for (let key in this.state) {
+  //     // if the key exists in localStorage
+  //     if (localStorage.hasOwnProperty(key)) {
+  //       // get the key's value from localStorage
+  //       let value = localStorage.getItem(key);
+
+  //       // parse the localStorage string and setState
+  //       try {
+  //         value = JSON.parse(value);
+  //         this.setState({ [key]: value });
+  //       } catch (e) {
+  //         // handle empty string
+  //         this.setState({ [key]: value });
+  //       }
+  //     }
+  //   }
+  // }
+
+  // saveStateToLocalStorage() {
+  //   // for every item in React state
+  //   for (let key in this.state) {
+  //     // save to localStorage
+  //     localStorage.setItem(key, JSON.stringify(this.state[key]));
+  //   }
+  // }
 
  submitItem = e => {
      e.preventDefault();
      this.addNewComment(e, this.state.text);
      this.setState({text:""});
-     
+    localStorage.setItem("text", "");
  }
 
 render() {
@@ -63,6 +116,16 @@ return (
 )
 
 }
+
+
+// CommentSection.propTypes = {
+//     comments: PropTypes.arrayOf(
+//         PropTypes.shape({
+//             username: PropTypes.string.isRequired,
+//             text: PropTyptes.string.isRequired
+//         })
+//     )
+// };
 
 }
 

@@ -160,8 +160,8 @@ height: 100%;
       text-align: center;
     }
     
-    .icons{
-      width: 17%;
+    div .icons{
+      width: 30%;
       height: 130px;
       display: flex;
       flex-direction: row;

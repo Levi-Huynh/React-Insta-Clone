@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CommentSection from '../CommentSection/CommentSection';
 import InstaPostAtt from '../PostContainer/InstaPostAtt';
+import PropTypes from 'prop-types';
 // import SearchBar from '../SearchBar/SearchBar';
  
 const PostContainer = props => {
@@ -25,6 +26,21 @@ const PostContainer = props => {
 </div>
 
     )
+
+    PostContainer.propTypes = {
+    post: PropTypes.arrayOf(
+            PropTypes.shape({
+            timestamp: PropTypes.string.isRequired,
+            
+            comments: PropTypes.arrayOf(
+                PropTypes.shape({
+                    username: PropTypes.string,
+                    text: PropTypes.string
+                })
+            )
+        })
+        )
+    }
 }
 
 
