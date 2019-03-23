@@ -1,0 +1,41 @@
+
+
+.commentContainer{
+    display: flex;
+    flex-direction: row;
+    /* margin-left: 2.5%; */
+    font-size: 1.35rem;
+    font-weight: 600;
+    margin-top: 4px;
+    max-width: 900px;
+    width: 100%;
+}
+
+.CommentComp{
+  
+}
+
+.topCommentSect{
+    /* border: 1px solid green; */
+    width: 100%;
+}
+.usernameComm{
+    font-weight: 650;
+    margin-right: 1%;
+    margin-top: 0;
+    line-height: 7px;
+}
+
+.textComm{
+    margin-top: 0;
+    line-height: 7px;
+}
+
+.inputComm{
+    height: 100px;
+    width: 99%;
+    font-weight: 650;
+    font-size: 1.35rem;
+    padding-left: 2.5%;
+    color: black;
+}
