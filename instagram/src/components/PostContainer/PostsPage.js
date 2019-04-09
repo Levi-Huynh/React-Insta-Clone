@@ -80,7 +80,8 @@ return(
       <div className="icons">
         <i className="far fa-compass"></i>
         <i className="far fa-heart"></i>
-        <i className="far fa-user" onClick={this.logout.bind(this)}>Logout</i>
+        <i className="far fa-user" onClick={this.logout.bind(this)}>Logout
+        </i>
         </div>
 
       </div>

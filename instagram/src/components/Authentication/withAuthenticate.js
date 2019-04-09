@@ -3,7 +3,7 @@ import App from '../../App';
 import PostsPage from '../PostContainer/PostsPage';
 import Login from '../Login/Login';
 
-const withAuthenticate = PostsPage => LoginPage => {
+const withAuthenticate = PostsPage=> Login => {
 
   return class extends React.Component {
     constructor(props){
@@ -18,14 +18,14 @@ const withAuthenticate = PostsPage => LoginPage => {
       if (currentIndex=== null) {
         this.setState({user: !true})
       } else {
-        this.setState({user:true})
+        this.setState({user: true})
       }
     }
 
     render() {
       return (
         <div>
-          {this.state.user === true ? <PostsPage/> : <Login/>}
+          {this.state.user === true ? <PostsPage/>: <Login/>}
         </div>
       )
     }
