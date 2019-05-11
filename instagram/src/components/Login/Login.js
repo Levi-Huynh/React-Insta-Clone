@@ -32,7 +32,7 @@ this.setState({ [event.target.name]: event.target.value });
 render() {
 
     return (
-        <div>
+        <div className="loginWrap">
             <form className="loginForm">
             <div className="logoLogin">
   <img className="logoImg" src="https://rayabel.com/images/staticimages/instagram-header.png" alt="logo"></img> 

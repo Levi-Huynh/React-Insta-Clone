@@ -4,7 +4,8 @@
  max-width: 800px;
  width: 100%;
  border: none;
-background: #FAFAFA;
+/* background: #FAFAFA; */
+background: #E2E8ED;
 box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
@@ -197,9 +198,15 @@ color: red;
 }
 
 /*LOGIN*/
+.loginWrap{
+  margin: 0 auto;
+  padding: 10%;
+}
 
     .loginForm{
       margin: 0 auto;
+   
+      padding: 10%;
       display: flex;
       flex-direction: column;
       align-content: center;
@@ -207,11 +214,12 @@ color: red;
       justify-content: center;
       width: 60%;
       height: 400px;
-      border: 1px solid #DADDE2;
-      background: #E2E8ED;
+       border: 2px solid #DADDE2; 
+      /* background: #E2E8ED; */
     }
 
 .loginIn{
+
   margin: 7px 0; 
   width: 45%;
   border-radius: 4.5px;
