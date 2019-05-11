@@ -19,7 +19,8 @@ const SearchBar = props =>{
         <div>
         <ContainerDiv/>
             <div className="logo">
-           <img className="logoImg" src="https://rayabel.com/images/staticimages/instagram-header.png" alt="logo"></img>
+           {/* <img className="logoImg" src="https://rayabel.com/images/staticimages/instagram-header.png" alt="logo"></img> */}
+           <i class="fab fa-instagram fa-2x"></i>
            </div>
           <input className="SearchInput" placeholder="Search"/>
 

@@ -5,7 +5,8 @@ class InstaLikes extends React.Component {
         super(props)
         this.state ={
             post: props.icons,
-            likes: props.icons.likes
+            likes: props.icons.likes,
+            colored: false
         }
         console.log(this.state.likes);
     }
@@ -13,7 +14,8 @@ class InstaLikes extends React.Component {
  incrementLike= () => {
         this.setState(prevState => {
             return {
-                likes: prevState.likes + 1
+                likes: prevState.likes + 1,
+                colored: !this.state.colored
             }
         })
         console.log(this.state.likes);
@@ -21,9 +23,9 @@ class InstaLikes extends React.Component {
 
 render () {
 return (
-<div>
+<div className="likeWrapper">
     <div className="likeIcons">
-<i className="far fa-heart" onClick={this.incrementLike.bind(this)}></i>
+<i className= {this.state.colored? " red-c far fa-heart" : "far fa-heart"} onClick={this.incrementLike.bind(this)}></i>
 <i className="far fa-comment"></i>    
 </div>
 

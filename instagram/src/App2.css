@@ -4,7 +4,9 @@
     justify-content: space-between;
     align-items: center;
     align-content: center;
-    border: 1px solid blue;
+
+    border: 1px solid #DADDE2;
+
     height: 80px;
     max-width: 900px;
     width: 100%;
@@ -12,27 +14,24 @@
     
     .logo{
       margin-top: 19px;
-      width: 20%;
+      width: 30%;
       height: 40px;
-      border: 1px solid blue;
+      border: none;
     }
     
     .logo .logoImg{
       max-width: 100%;
       height: auto;
     }
-    
-    .form{
+
       
-      width: 45%;
-      display: flex;
-      align-items: center;
-    }
+  
+   
     .SearchInput{
       margin-top: 20px;
       height: 30px;
       width: 85%;
-      border: 1px solid blue;
+      border: 1px solid #DADDE2;
       align-self: center;
       text-align: center;
     }
@@ -47,7 +46,7 @@
     }
     
     .far{
-      border: 1px solid purple;
+   border: none;
       width: 30%;
       height: 25px;
       text-align: center;

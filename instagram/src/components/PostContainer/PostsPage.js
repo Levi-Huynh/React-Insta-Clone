@@ -66,9 +66,9 @@ return(
   <div>
   <div className="SearchBar">
           <div className="logo">
-         <img className="logoImg" src="https://rayabel.com/images/staticimages/instagram-header.png" alt="logo"></img>
+  <img className="logoImg" src="https://rayabel.com/images/staticimages/instagram-header.png" alt="logo"></img> 
          </div>
-     <form className="form" onSubmit={this.filterSearch.bind(this)}>
+     <form className="formS" onSubmit={this.filterSearch.bind(this)}>
         <input 
         className="SearchInput" 
         placeholder="Search"
@@ -78,9 +78,9 @@ return(
         />
       </form>
       <div className="icons">
-        <i className="far fa-compass"></i>
-        <i className="far fa-heart"></i>
-        <i className="far fa-user" onClick={this.logout.bind(this)}>Logout
+        <i className="far fa-compass fa-2x "></i>
+        <i className="far fa-heart fa-2x "></i>
+        <i className="far fa-user fa-2x" onClick={this.logout.bind(this)}>
         </i>
         </div>
 

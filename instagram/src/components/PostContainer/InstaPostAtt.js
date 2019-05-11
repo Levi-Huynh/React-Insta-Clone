@@ -14,7 +14,7 @@ const InstaPostAtt = props => {
 <div className="thumbnail">
 <img className="thumbnail1" src={props.attribute.thumbnailUrl} alt={props.attribute.username}></img>
 </div>
-<h3>{props.attribute.username}</h3>
+<h1>{props.attribute.username}</h1>
 </div>
 <div className="instaImage">
 <img className="instaImage1" src={props.attribute.imageUrl} alt={props.attribute.username}></img>
